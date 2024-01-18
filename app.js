@@ -17,3 +17,13 @@ m.size; // 2
 // An array and obj are instances so if you say [] = [] it will return false bcuz they are diff instances so the results above will create two keys and two values. It does not reassign true to false
 
 console.log(m);
+
+// hasDuplicate
+
+const hasDuplicate = (arr) => {
+  // compare the Set size to the arr length to see if any duplicates were removed
+  return new Set(arr).size === arr.length ? true : false;
+};
+
+console.log(hasDuplicate([1, 1, 4, 5, 2, 6, 2, 98]));
+console.log(hasDuplicate([1, 2, 3, 4]));
