@@ -27,3 +27,25 @@ const hasDuplicate = (arr) => {
 
 console.log(hasDuplicate([1, 1, 4, 5, 2, 6, 2, 98]));
 console.log(hasDuplicate([1, 2, 3, 4]));
+
+// vowelCount
+
+const vowelCount = (str) => {
+  const vowels = "aeiou";
+  let m = new Map();
+
+  for (let char of str) {
+    let lowerCase = char.toLowerCase();
+    if (vowels.includes(lowerCase)) {
+      if (m.has(lowerCase)) {
+        m.set(lowerCase, m.get(lowerCase) + 1);
+      } else {
+        m.set(lowerCase, 1);
+      }
+    }
+  }
+  return m;
+};
+
+console.log(vowelCount("awesome"));
+console.log(vowelCount("Colt"));
